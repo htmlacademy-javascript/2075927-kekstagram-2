@@ -6,7 +6,7 @@ function checkStringLength(string, length) {
   }
 }
 
-checkStringLength();
+checkStringLength('тестовая строка', 20);
 
 const checkLength = (string, length) => string.length <= length;
 
@@ -24,3 +24,4 @@ const isPalindrome = (string) => {
 
 
 isPalindrome();
+
