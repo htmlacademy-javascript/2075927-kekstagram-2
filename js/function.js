@@ -1,7 +1,11 @@
-const getCheckLength = (string, length) => string.length <= length;
+// Задание 1
+
+/* const getCheckLength = (string, length) => string.length <= length;
 
 getCheckLength('ffff', 33);
 
+
+// Задание 2
 
 const getIsPalindrome = (string) => {
   const normalizedString = string.replaceAll(' ', '').toLowerCase();
@@ -15,3 +19,4 @@ const getIsPalindrome = (string) => {
 
 getIsPalindrome();
 
+ */
