@@ -1,22 +1,11 @@
-const DESCRIPTIONS = [
-  'Лето',
-  'Настроение',
-  'Зима',
-  'Весна',
-  'Осень',
-  'Ночь',
-  'День',
-  'Рай',
-  'Ад',
-  'Луг',
-  'Море',
-  'Картина',
-  'Живопись',
-  'Жара',
-  'Холод',
-];
+/* в этот файл добавляет скрипты*/
+const MIN_LIKES = 15;
+const MAX_LIKES = 200;
+const MIN_COMMENTS = 0;
+const MAX_COMMENTS = 30;
+const COUNT_RANDOM_OBJECT = 25;
 
-const COMMENTS = [
+const MESSAGES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё',
   'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
@@ -38,7 +27,13 @@ const NAMES = [
   'Зоя',
   'Пётр',
   'Елена',
-  'Татьяна'
+  'Татьяна',
+  'Павел',
+  'Игорь',
+  'Андрей',
+  'Роман',
+  'Артём'
 ];
 
-export { NAMES, COMMENTS, DESCRIPTIONS };
+
+export { NAMES, MESSAGES, MIN_LIKES, MAX_LIKES, MIN_COMMENTS, MAX_COMMENTS, COUNT_RANDOM_OBJECT };

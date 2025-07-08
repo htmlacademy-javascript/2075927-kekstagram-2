@@ -1,37 +1,30 @@
-import { createRandomIdRangeGenerator ,getRandomInteger } from './util.js';
+import { getRandomInteger } from './util.js';
 
 // хранит данные которые известны до выполнения программы
-import { NAMES, COMMENTS, DESCRIPTIONS } from './data.js';
-
-// генератор для id фотографий
-const PHOTO_ARRAY_SIZE = 25;
+import { NAMES, MESSAGES, MIN_LIKES, MAX_LIKES, MIN_COMMENTS, MAX_COMMENTS, COUNT_RANDOM_OBJECT } from './data.js';
 
 //функция которая возвращает рандомный элемент массива
 const getRandomArrayElement = (elements) =>
   elements[getRandomInteger(0, elements.length - 1)];
 
-const getPhotoID = createRandomIdRangeGenerator(1, 26);
-const generateCommentId = createRandomIdRangeGenerator(1, 26);
-const getNumberPhoto = createRandomIdRangeGenerator(1, 26);
-
 // Функция для генерации случайного комментария
-const createComments = () => ({
-  id: generateCommentId(),
+const createComment = () => ({
+  id: getRandomInteger(0, 25),
   avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
-  message: getRandomArrayElement(COMMENTS),
+  message: getRandomArrayElement(MESSAGES),
   name: getRandomArrayElement(NAMES),
 });
 
-// Функция для генерации массива фотографий
-const createPhotoDescription = () => ({
-  id: getPhotoID(),
-  url: `photo/${getNumberPhoto()}.jpg`,
-  description: getRandomArrayElement(DESCRIPTIONS),
-  likes: getRandomInteger(15, 200),
-  comments: Array.from({ length: getRandomInteger(0, 30) }, createComments),
+// Функция для генерации массива фотографий id сообщений лайков и комментария
+const createCommentObject = () => ({
+  id: getRandomInteger(0, 26),
+  url: `photos/${getRandomInteger(1, 25)}.jpg`,
+  description: getRandomArrayElement(MESSAGES),
+  likes: getRandomInteger(MIN_LIKES, MAX_LIKES),
+  comments:  Array.from({ length: getRandomInteger(MIN_COMMENTS, MAX_COMMENTS) }, createComment),
 });
 
 const getArrayMiniatures = () =>
-  Array.from({ length: PHOTO_ARRAY_SIZE}, createPhotoDescription);
+  Array.from({ length: COUNT_RANDOM_OBJECT}, createCommentObject);
 
 export { getArrayMiniatures };
