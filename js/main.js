@@ -1,2 +1,2 @@
-import { getArrayMiniatures } from './createArrayMiniatures';
+import { getArrayMiniatures } from './create-array-miniatures';
 getArrayMiniatures();

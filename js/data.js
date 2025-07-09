@@ -1,4 +1,3 @@
-/* в этот файл добавляет скрипты*/
 const MIN_LIKES = 15;
 const MAX_LIKES = 200;
 const MIN_COMMENTS = 0;

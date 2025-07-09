@@ -6,5 +6,8 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 
+//функция которая возвращает рандомный элемент массива
+const getRandomArrayElement = (elements) =>
+  elements[getRandomInteger(0, elements.length - 1)];
 
-export { getRandomInteger };
+export { getRandomInteger, getRandomArrayElement };
