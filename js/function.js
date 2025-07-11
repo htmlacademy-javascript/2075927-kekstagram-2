@@ -1,17 +1,22 @@
-const getCheckLength = (string, length) => string.length <= length;
+const minutesInHour = 60;
 
-getCheckLength('ffff', 33);
+const isMeetingInWorkTime = (startWork, finishWork, startMeeting, durationMeeting) => {
 
+  const parseTimeToMinutes = (timeString) => {
+    const time = timeString.split(':');
+    const hours = parseInt(time[0], 10);
+    const minutes = parseInt(time[1], 10);
 
-const getIsPalindrome = (string) => {
-  const normalizedString = string.replaceAll(' ', '').toLowerCase();
-  let emptyString = '';
-  for (let i = normalizedString.length - 1; i >= 0; i--) {
-    emptyString += normalizedString[i];
-  }
-  return emptyString === normalizedString;
+    return hours * minutesInHour + minutes;
+  };
+
+  const startWorkInMinutes = parseTimeToMinutes(startWork);
+  const finishWorkInMinutes = parseTimeToMinutes(finishWork);
+  const startMeetingInMinutes = parseTimeToMinutes(startMeeting);
+  const finishMeetingInMinutes = startMeetingInMinutes + durationMeeting;
+
+  return startMeetingInMinutes >= startWorkInMinutes && finishMeetingInMinutes <= finishWorkInMinutes;
 };
 
-
-getIsPalindrome();
+export { isMeetingInWorkTime };
 
