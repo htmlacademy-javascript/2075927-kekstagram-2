@@ -34,10 +34,11 @@ const isMeetingInWorkTime = (startWork, finishWork, startMeeting, durationMeetin
 
   const parseTimeToMinutes = (timeString) => {
     const time = timeString.split(':');
-    const hours = parseInt(time[0]);
-    const minutes = parseInt(time[1]);
+    const hours = parseInt(time[0],finishWork);
+    const minutes = parseInt(time[1],finishWork);
+    const minutesInHour = 60;
 
-    return hours * 60 + minutes;
+    return hours * minutesInHour + minutes;
   };
 
   const startWorkInMinutes = parseTimeToMinutes(startWork);
@@ -47,4 +48,6 @@ const isMeetingInWorkTime = (startWork, finishWork, startMeeting, durationMeetin
 
   return (startMeetingInMinutes >= startWorkInMinutes && finishMeetingInMinutes <= finishWorkInMinutes);
 };
+
+export { isMeetingInWorkTime };
 
